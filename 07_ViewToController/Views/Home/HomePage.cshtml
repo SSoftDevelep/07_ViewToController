@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomePage</title>
+</head>
+<body>
+    <div>
+
+        @{
+            SelectListItem[] listem = new SelectListItem[3]
+            {
+                    new SelectListItem() { Text= "Galatasaray"},
+                    new SelectListItem() { Text= "Fenerbahce"},
+                    new SelectListItem() { Text= "Besiktas" }
+             };
+        }
+
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("text1"); <br />
+            @("Onayliyorum :")@Html.CheckBox("check1") <br />
+            @Html.DropDownList("list1", listem)
+
+            <hr />
+
+            <input type="submit" value="send" />
+        }
+
+
+    </div>
+</body>
+
+</html>
